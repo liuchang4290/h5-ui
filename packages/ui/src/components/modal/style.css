@@ -145,8 +145,14 @@
   justify-content: center;
   width: 44px;
   height: 44px;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
   border-radius: 999px;
   color: var(--xb-modal-close-color, var(--xb-modal-close-color-default));
+  font: inherit;
   cursor: pointer;
 }
 
@@ -179,12 +185,20 @@
 
 .xb-modal__action {
   min-height: var(--xb-modal-action-height, var(--xb-modal-action-height-default));
+  margin: 0;
   padding: 0 16px;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
   color: var(--xb-modal-action-color, var(--xb-modal-action-color-default));
+  font: inherit;
   font-size: 16px;
+  text-align: center;
   line-height: 1.2;
   cursor: pointer;
   transition: background-color 160ms ease, opacity 160ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .xb-modal__action--primary {

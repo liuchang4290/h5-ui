@@ -23,6 +23,26 @@ export function ModalPage() {
         </div>
       </section>
 
+      <section className="docSection" id="import">
+        <div className="sectionHeading">
+          <h2>引入方式</h2>
+          <p>组件按需从 UI 包导入，样式文件只需要在应用入口引入一次。</p>
+        </div>
+
+        <div className="exampleBlock">
+          <div className="exampleToolbar">
+            <span>Import</span>
+            <span>TSX</span>
+          </div>
+          <div className="exampleCode">
+            <pre>
+              <code>{`import '@xbotgo/ui/styles.css';
+import { Modal } from '@xbotgo/ui';`}</code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
       <section className="docSection" id="examples">
         <div className="sectionHeading">
           <h2>代码演示</h2>

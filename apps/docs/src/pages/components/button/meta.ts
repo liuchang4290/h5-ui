@@ -3,6 +3,7 @@ import type { DocsPageMeta } from '../../../app/docs-types';
 export const buttonMeta: DocsPageMeta = {
   anchors: [
     { href: '#overview', label: '概述' },
+    { href: '#import', label: '引入方式' },
     { href: '#examples', label: '代码演示' },
     { href: '#api', label: 'API' },
     { href: '#css-vars', label: '样式变量' },
