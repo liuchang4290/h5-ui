@@ -1,0 +1,29 @@
+{
+  "name": "xbotgo-ui-hybrid",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "scripts": {
+    "dev": "pnpm --filter @xbotgo/playground dev",
+    "docs:dev": "pnpm --filter @xbotgo/docs dev",
+    "docs:build": "pnpm --filter @xbotgo/ui build && pnpm --filter @xbotgo/docs build",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.11"
+  }
+}

@@ -1,0 +1,195 @@
+.xb-button {
+  --xb-button-active-shadow-default: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 8px 14px rgba(17, 24, 39, 0.08);
+  --xb-button-active-transform-default: translateY(1px) scale(0.985);
+  --xb-button-bg-default: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+  --xb-button-border-default: var(--xb-color-border-soft);
+  --xb-button-disabled-bg-default: linear-gradient(180deg, #f1f1f1 0%, #e7e7e7 100%);
+  --xb-button-disabled-border-default: rgba(205, 205, 205, 0.92);
+  --xb-button-disabled-shadow-default: none;
+  --xb-button-disabled-text-default: var(--xb-color-text-tertiary);
+  --xb-button-focus-outline-default: rgba(0, 122, 255, 0.2);
+  --xb-button-font-size-default: 15px;
+  --xb-button-gap-default: 8px;
+  --xb-button-height-default: 44px;
+  --xb-button-loader-size-default: 1em;
+  --xb-button-min-width-default: 112px;
+  --xb-button-padding-block-default: 0px;
+  --xb-button-padding-inline-default: 22px;
+  --xb-button-radius-default: 999px;
+  --xb-button-shadow-default: 0 10px 20px rgba(17, 24, 39, 0.08);
+  --xb-button-text-default: var(--xb-color-text-primary);
+  --xb-button-width-default: 100%;
+  align-items: center;
+  appearance: none;
+  background: var(--xb-button-bg, var(--xb-button-bg-default));
+  border: none;
+  border-radius: var(--xb-button-radius, var(--xb-button-radius-default));
+  box-shadow:
+    inset 0 0 0 1px var(--xb-button-border, var(--xb-button-border-default)),
+    var(--xb-button-shadow, var(--xb-button-shadow-default));
+  color: var(--xb-button-text, var(--xb-button-text-default));
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: var(--xb-button-font-size, var(--xb-button-font-size-default));
+  font-weight: 600;
+  gap: var(--xb-button-gap, var(--xb-button-gap-default));
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  max-width: 100%;
+  height: var(--xb-button-height, auto);
+  min-height: var(--xb-button-height, var(--xb-button-height-default));
+  min-width: var(--xb-button-min-width, var(--xb-button-width, var(--xb-button-min-width-default)));
+  padding-bottom: var(--xb-button-padding-block, var(--xb-button-padding-block-default));
+  padding-left: var(--xb-button-padding-inline, var(--xb-button-padding-inline-default));
+  padding-right: var(--xb-button-padding-inline, var(--xb-button-padding-inline-default));
+  padding-top: var(--xb-button-padding-block, var(--xb-button-padding-block-default));
+  position: relative;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    opacity 180ms ease;
+  user-select: none;
+  width: var(--xb-button-width, var(--xb-button-width-default));
+  -webkit-tap-highlight-color: transparent;
+}
+
+.xb-button::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: inherit;
+  content: '';
+  inset: 1px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.xb-button:focus-visible {
+  outline: 3px solid var(--xb-button-focus-outline, var(--xb-button-focus-outline-default));
+  outline-offset: 4px;
+}
+
+.xb-button:active:not(:disabled) {
+  box-shadow: var(--xb-button-active-shadow, var(--xb-button-active-shadow-default));
+  filter: saturate(1.02);
+  transform: var(--xb-button-active-transform, var(--xb-button-active-transform-default));
+}
+
+.xb-button:disabled {
+  background: var(--xb-button-disabled-bg, var(--xb-button-disabled-bg-default));
+  box-shadow:
+    inset 0 0 0 1px var(--xb-button-disabled-border, var(--xb-button-disabled-border-default)),
+    var(--xb-button-disabled-shadow, var(--xb-button-disabled-shadow-default));
+  color: var(--xb-button-disabled-text, var(--xb-button-disabled-text-default));
+  cursor: not-allowed;
+  opacity: 1;
+  transform: none;
+}
+
+.xb-button__content {
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.xb-button__loader {
+  animation: xb-button-spin 0.75s linear infinite;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  border-right-color: transparent;
+  display: inline-flex;
+  height: var(--xb-button-loader-size, var(--xb-button-loader-size-default));
+  position: relative;
+  width: var(--xb-button-loader-size, var(--xb-button-loader-size-default));
+  z-index: 1;
+}
+
+.xb-button--block {
+  display: flex;
+  width: var(--xb-button-width, 100%);
+}
+
+.xb-button--size-small {
+  --xb-button-font-size-default: 14px;
+  --xb-button-height-default: 36px;
+  --xb-button-min-width-default: 96px;
+  --xb-button-padding-inline-default: 18px;
+}
+
+.xb-button--size-middle {
+  --xb-button-font-size-default: 15px;
+  --xb-button-height-default: 44px;
+  --xb-button-min-width-default: 112px;
+  --xb-button-padding-inline-default: 22px;
+}
+
+.xb-button--size-large {
+  --xb-button-font-size-default: 16px;
+  --xb-button-height-default: 52px;
+  --xb-button-min-width-default: 132px;
+  --xb-button-padding-inline-default: 28px;
+}
+
+.xb-button--type-primary {
+  --xb-button-bg-default: linear-gradient(90deg, var(--xb-color-brand-start) 0%, var(--xb-color-brand-end) 100%);
+  --xb-button-border-default: rgba(189, 18, 14, 0.72);
+  --xb-button-disabled-bg-default: linear-gradient(180deg, #dddddd 0%, #c9c9c9 100%);
+  --xb-button-disabled-border-default: rgba(205, 205, 205, 0.92);
+  --xb-button-disabled-shadow-default: none;
+  --xb-button-disabled-text-default: #ffffff;
+  --xb-button-shadow-default: 0 16px 28px rgba(189, 18, 14, 0.22);
+  --xb-button-text-default: var(--xb-color-text-on-dark);
+}
+
+.xb-button--type-secondary {
+  --xb-button-bg-default: linear-gradient(180deg, rgba(236, 97, 4, 0.12) 0%, rgba(255, 117, 0, 0.08) 100%);
+  --xb-button-border-default: rgba(236, 97, 4, 0.24);
+  --xb-button-shadow-default: 0 10px 20px rgba(236, 97, 4, 0.12);
+  --xb-button-text-default: var(--xb-color-accent-orange);
+}
+
+.xb-button--type-default {
+  --xb-button-bg-default: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+  --xb-button-border-default: rgba(205, 205, 205, 0.9);
+  --xb-button-shadow-default: 0 10px 20px rgba(17, 24, 39, 0.08);
+  --xb-button-text-default: var(--xb-color-text-primary);
+}
+
+.xb-button--type-text {
+  --xb-button-active-shadow-default: none;
+  --xb-button-bg-default: transparent;
+  --xb-button-border-default: transparent;
+  --xb-button-disabled-text-default: var(--xb-color-text-tertiary);
+  --xb-button-shadow-default: none;
+  --xb-button-text-default: var(--xb-color-accent-orange);
+  --xb-button-min-width-default: auto;
+  --xb-button-padding-inline-default: 0;
+  --xb-button-width-default: auto;
+}
+
+.xb-button.xb-button--type-text::after {
+  display: none;
+}
+
+@keyframes xb-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xb-button,
+  .xb-button__loader {
+    animation: none;
+    transition: none;
+  }
+
+  .xb-button:active:not(:disabled) {
+    transform: none;
+  }
+}

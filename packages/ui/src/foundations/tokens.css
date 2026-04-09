@@ -1,0 +1,12 @@
+:root {
+  --xb-color-brand-start: #ff7500;
+  --xb-color-brand-end: #bd120e;
+  --xb-color-text-primary: #333333;
+  --xb-color-text-secondary: #666666;
+  --xb-color-text-tertiary: #999999;
+  --xb-color-accent-orange: #ec6104;
+  --xb-color-accent-blue: #007aff;
+  --xb-color-text-on-dark: #ffffff;
+  --xb-color-border-soft: #cdcdcd;
+  --xb-color-fill-muted: #9e9e9e;
+}
