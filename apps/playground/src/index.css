@@ -99,9 +99,113 @@ code {
   margin-top: 18px;
 }
 
+.explorer {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.component-nav {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+}
+
+.component-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+  padding: 12px;
+  color: #1e293b;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.component-link.is-active {
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.12);
+}
+
+.component-link-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.component-link-desc {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.preview-area {
+  min-height: 280px;
+}
+
+.modal-actions {
+  margin-top: 20px;
+}
+
+.toast-config {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.toast-config-row {
+  display: grid;
+  gap: 8px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  color: #334155;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip.is-active {
+  border-color: rgba(37, 99, 235, 0.46);
+  color: #1d4ed8;
+  background: rgba(239, 246, 255, 0.95);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  font-size: 14px;
+}
+
+.steps {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.step {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #334155;
+  font-size: 14px;
+  background: rgba(248, 250, 252, 0.9);
+}
+
 .section-header {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  /* align-items: flex-end; */
   gap: 20px;
   justify-content: space-between;
 }
@@ -126,7 +230,7 @@ code {
   max-width: 320px;
   color: #64748b;
   font-size: 14px;
-  text-align: right;
+  text-align: left;
 }
 
 .button-grid {
@@ -228,6 +332,10 @@ code {
 
   .button-grid,
   .swatches {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer {
     grid-template-columns: 1fr;
   }
 }

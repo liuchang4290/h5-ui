@@ -825,3 +825,14 @@ pre {
     scroll-behavior: auto;
   }
 }
+
+.toastDemoStack {
+  display: grid;
+  gap: 12px;
+}
+
+.toastDemoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

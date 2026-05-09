@@ -4,6 +4,8 @@ import { ButtonPage } from '../pages/components/button/page';
 import { buttonMeta } from '../pages/components/button/meta';
 import { ModalPage } from '../pages/components/modal/page';
 import { modalMeta } from '../pages/components/modal/meta';
+import { ToastPage } from '../pages/components/toast/page';
+import { toastMeta } from '../pages/components/toast/meta';
 import { GuideIntroductionPage } from '../pages/guide/introduction/page';
 import { guideIntroductionMeta } from '../pages/guide/introduction/meta';
 import { GuideQuickStartPage } from '../pages/guide/quickstart/page';
@@ -33,6 +35,10 @@ const docsPages: DocsPageModule[] = [
   {
     Page: ModalPage,
     meta: modalMeta,
+  },
+  {
+    Page: ToastPage,
+    meta: toastMeta,
   },
 ];
 

@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ command }) => ({
   plugins: [react()],
   base: command === 'build' ? '/h5-ui/' : '/',
-  resolve: command === 'serve' ? { conditions: ['source'] } : undefined,
+  resolve: { conditions: ['source'] },
   server: {
     fs: {
       allow: [fileURLToPath(new URL('../..', import.meta.url))],

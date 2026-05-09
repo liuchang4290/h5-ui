@@ -5,7 +5,8 @@ export type DocsPageId =
   | 'guide/quickstart'
   | 'guide/palette'
   | 'components/button'
-  | 'components/modal';
+  | 'components/modal'
+  | 'components/toast';
 
 export interface PageAnchor {
   href: string;
