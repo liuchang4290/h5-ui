@@ -45,9 +45,9 @@ function TypesToastStage() {
 
 function PositionToastStage() {
   const [open, setOpen] = useState(false);
-  const [position, setPosition] = useState<'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'>('top-center');
+  const [position, setPosition] = useState<'center' | 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'>('top-center');
 
-  const trigger = (nextPosition: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right') => {
+  const trigger = (nextPosition: 'center' | 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right') => {
     setPosition(nextPosition);
     setOpen(false);
     requestAnimationFrame(() => setOpen(true));
@@ -56,6 +56,7 @@ function PositionToastStage() {
   return (
     <div className="toastDemoStack">
       <div className="toastDemoRow">
+        <Button type="default" onClick={() => trigger('center')}>center</Button>
         <Button type="default" onClick={() => trigger('top-left')}>top-left</Button>
         <Button type="default" onClick={() => trigger('top-center')}>top-center</Button>
         <Button type="default" onClick={() => trigger('top-right')}>top-right</Button>
@@ -167,7 +168,7 @@ import { Button, Toast } from '@xbotgo/ui';
 
 export function Demo() {
   const [open, setOpen] = useState(false);
-  const [position, setPosition] = useState<'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'>('top-center');
+  const [position, setPosition] = useState<'center' | 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'>('top-center');
 
   const trigger = (nextPosition: typeof position) => {
     setPosition(nextPosition);

@@ -5,6 +5,7 @@ export type DocsPageId =
   | 'guide/quickstart'
   | 'guide/palette'
   | 'components/button'
+  | 'components/loading'
   | 'components/modal'
   | 'components/toast';
 

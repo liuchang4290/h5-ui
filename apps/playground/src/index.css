@@ -146,6 +146,18 @@ code {
   margin-top: 20px;
 }
 
+.loading-demo {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.loading-demo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .toast-config {
   margin-top: 16px;
   display: grid;

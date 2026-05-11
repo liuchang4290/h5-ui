@@ -8,6 +8,7 @@ const POSITION_CLASS_NAME: Record<ToastPosition, string> = {
   'bottom-center': 'xb-toast__viewport--bottom-center',
   'bottom-left': 'xb-toast__viewport--bottom-left',
   'bottom-right': 'xb-toast__viewport--bottom-right',
+  center: 'xb-toast__viewport--center',
   'top-center': 'xb-toast__viewport--top-center',
   'top-left': 'xb-toast__viewport--top-left',
   'top-right': 'xb-toast__viewport--top-right',

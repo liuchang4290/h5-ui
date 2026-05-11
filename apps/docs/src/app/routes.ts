@@ -2,6 +2,8 @@ import type { DocsPageId, DocsPageModule, SidebarGroup } from './docs-types';
 
 import { ButtonPage } from '../pages/components/button/page';
 import { buttonMeta } from '../pages/components/button/meta';
+import { LoadingPage } from '../pages/components/loading/page';
+import { loadingMeta } from '../pages/components/loading/meta';
 import { ModalPage } from '../pages/components/modal/page';
 import { modalMeta } from '../pages/components/modal/meta';
 import { ToastPage } from '../pages/components/toast/page';
@@ -31,6 +33,10 @@ const docsPages: DocsPageModule[] = [
   {
     Page: ButtonPage,
     meta: buttonMeta,
+  },
+  {
+    Page: LoadingPage,
+    meta: loadingMeta,
   },
   {
     Page: ModalPage,

@@ -1,4 +1,5 @@
 export { Button } from './button';
+export { Loading } from './loading';
 export { Modal } from './modal';
 export { Toast } from './toast';
 export type {
@@ -10,6 +11,12 @@ export type {
   ButtonStyleVariableName,
   ButtonType,
 } from './button';
+export type {
+  LoadingProps,
+  LoadingSize,
+  LoadingStyleOverrides,
+  LoadingStyleVariableName,
+} from './loading';
 export type {
   ModalAction,
   ModalActionTone,

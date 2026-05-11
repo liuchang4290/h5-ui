@@ -49,6 +49,12 @@
   bottom: 18px;
 }
 
+.xb-toast__viewport--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .xb-toast {
   position: relative;
   pointer-events: auto;
@@ -90,8 +96,8 @@
   border-right: 2px solid var(--xb-toast-success, var(--xb-toast-success-default));
   border-bottom: 2px solid var(--xb-toast-success, var(--xb-toast-success-default));
   transform: rotate(45deg);
-  left: 6px;
-  top: 3px;
+  left: 5px;
+  top: 2px;
 }
 
 .xb-toast__icon--danger {

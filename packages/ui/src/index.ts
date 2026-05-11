@@ -1,4 +1,5 @@
 export { Button } from './components';
+export { Loading } from './components';
 export { Modal } from './components';
 export { Toast } from './components';
 export type {
@@ -9,6 +10,12 @@ export type {
   ButtonStyleOverrides,
   ButtonStyleVariableName,
   ButtonType,
+} from './components';
+export type {
+  LoadingProps,
+  LoadingSize,
+  LoadingStyleOverrides,
+  LoadingStyleVariableName,
 } from './components';
 export type {
   ModalAction,

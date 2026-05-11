@@ -1,4 +1,5 @@
 @import './foundations/tokens.css';
 @import './components/button/style.css';
+@import './components/loading/style.css';
 @import './components/modal/style.css';
 @import './components/toast/style.css';

@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { Button, Modal, Toast, uiVersion } from '@xbotgo/ui';
+import { Button, Loading, Modal, Toast, uiVersion } from '@xbotgo/ui';
 
 import './index.css';
 
-type ComponentId = 'button' | 'modal' | 'toast';
+type ComponentId = 'button' | 'loading' | 'modal' | 'toast';
 type ToastType = 'success' | 'danger' | 'warning' | 'info' | 'loading';
-type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'center';
 
 const COMPONENTS: Array<{ id: ComponentId; label: string; description: string }> = [
   { id: 'button', label: 'Button', description: '按钮样式与交互状态' },
+  { id: 'loading', label: 'Loading', description: '转圈加载指示器' },
   { id: 'modal', label: 'Modal', description: '弹窗结构、动作区与遮罩行为' },
   { id: 'toast', label: 'Toast', description: '轻提示状态、位置与自动关闭' },
 ];
@@ -83,8 +84,39 @@ function ModalPreview() {
   );
 }
 
+function LoadingPreview() {
+  const [spinning, setSpinning] = useState(true);
+
+  return (
+    <>
+      <div className="section-header">
+        <div>
+          <p className="section-label">Preview</p>
+          <h2>Loading 转圈效果</h2>
+        </div>
+        <p className="section-copy">支持 small / middle / large 尺寸和 spinning 开关。</p>
+      </div>
+
+      <div className="loading-demo">
+        <div className="loading-demo-row">
+          <Loading size="small" spinning={spinning} />
+          <Loading size="middle" spinning={spinning} />
+          <Loading size="large" spinning={spinning} />
+        </div>
+
+        <div className="loading-demo-row">
+          <Button type="default" onClick={() => setSpinning((value) => !value)}>
+            spinning: {String(spinning)}
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+}
+
 const TOAST_TYPES: ToastType[] = ['success', 'danger', 'warning', 'info', 'loading'];
 const TOAST_POSITIONS: ToastPosition[] = [
+  'center',
   'top-left',
   'top-center',
   'top-right',
@@ -203,6 +235,9 @@ export function App() {
   const activeComponent = useMemo(() => COMPONENTS.find((item) => item.id === activeId) ?? COMPONENTS[0], [activeId]);
 
   const renderPreview = () => {
+    if (activeId === 'loading') {
+      return <LoadingPreview />;
+    }
     if (activeId === 'toast') {
       return <ToastPreview />;
     }

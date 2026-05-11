@@ -25,7 +25,7 @@ export const toastApiRows = [
   },
   {
     name: 'position',
-    type: "'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'",
+    type: "'center' | 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'",
     defaultValue: "'top-center'",
     description: 'Toast 出现的位置。',
   },

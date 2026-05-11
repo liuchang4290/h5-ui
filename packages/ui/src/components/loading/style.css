@@ -1,0 +1,65 @@
+.xb-loading {
+  /* --xb-loading-color-default: #ff7500; */
+  --xb-loading-gradient-default: conic-gradient(
+    from 0deg,
+    rgba(255, 117, 0, 0) 0deg,
+    rgba(255, 117, 0, 0.18) 120deg,
+    #ff7500 230deg,
+    #bd120e 320deg,
+    rgba(189, 18, 14, 0) 360deg
+  );
+  --xb-loading-duration-default: 900ms;
+  --xb-loading-size-default: 22px;
+  --xb-loading-stroke-width-default: 2px;
+  position: relative;
+  display: inline-flex;
+  width: var(--xb-loading-size, var(--xb-loading-size-default));
+  height: var(--xb-loading-size, var(--xb-loading-size-default));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--xb-loading-color, var(--xb-loading-color-default)) 12%, transparent);
+}
+
+.xb-loading::before,
+.xb-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.xb-loading::before {
+  background: var(--xb-loading-gradient, var(--xb-loading-gradient-default));
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--xb-loading-stroke-width, var(--xb-loading-stroke-width-default))),
+    #000 calc(100% - var(--xb-loading-stroke-width, var(--xb-loading-stroke-width-default)))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - var(--xb-loading-stroke-width, var(--xb-loading-stroke-width-default))),
+    #000 calc(100% - var(--xb-loading-stroke-width, var(--xb-loading-stroke-width-default)))
+  );
+  animation: xb-loading-spin var(--xb-loading-duration, var(--xb-loading-duration-default)) linear infinite;
+}
+
+.xb-loading::after {
+  inset: calc(var(--xb-loading-stroke-width, var(--xb-loading-stroke-width-default)) * 1.8);
+  background: #fff;
+  opacity: 0.55;
+}
+
+.xb-loading--paused::before {
+  animation-play-state: paused;
+}
+
+@keyframes xb-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xb-loading::before {
+    animation: none;
+  }
+}
